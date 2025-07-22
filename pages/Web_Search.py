@@ -2,9 +2,12 @@ import streamlit as st
 from openai import OpenAI
 import os
 
+from dotenv import load_dotenv
+
 # Set page config
 st.set_page_config(page_title="Web Search Assistant", page_icon="🔍")
 st.title("🔍 Web Search Assistant")
+load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key= openai_api_key)
 
