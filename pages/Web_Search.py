@@ -8,7 +8,10 @@ from dotenv import load_dotenv
 st.set_page_config(page_title="Web Search Assistant", page_icon="🔍")
 st.title("🔍 Web Search Assistant")
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+
+# openai_api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key= openai_api_key)
 
 # Session state for messages and model
